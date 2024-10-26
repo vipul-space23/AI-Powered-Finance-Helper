@@ -12,7 +12,7 @@ export default function ChatPage() {
   const handleSendMessage = (e) => {
     e.preventDefault()
     if (inputMessage.trim() === "") return
-
+   
     const newMessage = { id: messages.length + 1, text: inputMessage, sender: "user" }
     setMessages([...messages, newMessage])
     setInputMessage("")
@@ -23,7 +23,38 @@ export default function ChatPage() {
       setMessages(prevMessages => [...prevMessages, botResponse])
     }, 1000)
   }
+  
+  const handleSubmit = async () => {
+    setLoading(true);
+    // Simulate API call with setTimeout
+    const groq = new Groq({ apiKey: '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',dangerouslyAllowBrowser: true });
 
+     async function main() {
+      setLoading(true)
+      const chatCompletion = await getGroqChatCompletion();
+      // Print the completion returned by the LLM.
+      console.log("main response",chatCompletion.choices[0]?.message?.content || "");
+      console.log("full response: ",chatCompletion);
+      
+      setResponse(chatCompletion.choices[0]?.message?.content)
+      setLoading(false)
+    }
+    
+    async function getGroqChatCompletion() {
+      return groq.chat.completions.create({
+        messages: [
+          {
+            role: "user",
+            content: `${inputValue}`,
+          },
+        ],
+        model: "llama3-8b-8192",
+      });
+    }
+    
+    main()
+ 
+  };
   return (
     <div className="flex flex-col h-screen bg-gray-100">
       <header className="bg-blue-600 text-white p-4">

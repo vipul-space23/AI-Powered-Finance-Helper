@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Schemes from './pages/Schemes';
 import ChatPage from './pages/ChatPage';
 import Loans from './pages/Loans';
+import FAQs from './pages/FAQs';
 
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
   <Route path="/schemes" element={<Schemes/>} />
   <Route path="/chat" element={<ChatPage/>} />
   <Route path="/loans" element={<Loans/>} />
+  <Route path="/faqs" element={<FAQs/>} />
 
 
 
