@@ -1,8 +1,20 @@
-# React + Vite
+This project is a multilingual AI-powered web app aimed at promoting financial inclusion and economic empowerment for underserved communities. It provides users with easy access to FAQs, government schemes, loans, women-specific benefits, and real-time financial news. Through the integration of LLaMA AI and Whisper AI, the platform enables seamless interaction via chatbots and voice assistants, breaking language and literacy barriers.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
+Voice Assistant with Multilingual Support
 
-Currently, two official plugins are available:
+Users can speak in their native language to interact with the system.
+Whisper AI backend handles speech-to-text conversion, even in regional languages.
+Chatbot powered by LLaMA AI
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Provides personalized answers about loans, government schemes, and FAQs.
+Offers contextual financial advice and supports diverse user queries.
+
+
+Tech Stack
+Frontend: React, React Router DOM, Tailwind CSS
+Backend: Node.js, Express, Python (for Whisper AI backend)
+Database: MongoDB
+AI Tools:
+LLaMA AI: Chatbot functionality for personalized responses
+Whisper AI: Voice recognition and transcription services
