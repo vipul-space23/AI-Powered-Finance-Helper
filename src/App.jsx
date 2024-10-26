@@ -12,6 +12,7 @@ import Schemes from './pages/Schemes';
 import ChatPage from './pages/ChatPage';
 import Loans from './pages/Loans';
 import FAQs from './pages/FAQs';
+import ProductComparison from './pages/ProductComparison';
 
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
   <Route path="/chat" element={<ChatPage/>} />
   <Route path="/loans" element={<Loans/>} />
   <Route path="/faqs" element={<FAQs/>} />
+  <Route path="/product-comparison" element={<ProductComparison/>} />
 
 
 

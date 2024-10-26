@@ -1,6 +1,7 @@
 import { useState, useEffect, createContext, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { MessageCircle, ChevronDown } from 'lucide-react'
+import Navbar from '../components/Navbar';
 
 // Create Language Context
 const LanguageContext = createContext();
@@ -131,6 +132,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white relative">
+      
       <header className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white p-4">
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold">{t.title}</h1>
@@ -213,6 +215,14 @@ export default function HomePage() {
             title={t.newsTitle}
             description={t.newsDesc}
           />
+
+         <FeatureCard
+            icon="🏦"
+            title={"Compare your banks"}
+            description={"get detail comparison of banks"}
+            onClick={()=>navigate("/product-comparison")}
+
+          />      
         </div>
 
         <section className="bg-gray-100 p-4 rounded-lg overflow-hidden">
