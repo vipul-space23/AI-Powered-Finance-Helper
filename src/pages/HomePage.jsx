@@ -1,7 +1,6 @@
 import { useState, useEffect, createContext, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { MessageCircle, ChevronDown } from 'lucide-react'
-import Navbar from '../components/Navbar';
 
 // Create Language Context
 const LanguageContext = createContext();
@@ -179,8 +178,8 @@ export default function HomePage() {
           <h2 className="text-4xl font-bold mb-4">{t.mainHeading}</h2>
           <p className="text-xl text-gray-600 mb-8">{t.mainSubheading}</p>
           <button 
-          className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-          onClick={()=>navigate("/chat")}
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            onClick={() => navigate("/chat")}
           >
             {t.getStarted}
           </button>
@@ -206,55 +205,34 @@ export default function HomePage() {
             onClick={() => navigate("/loans")}
           />
           <FeatureCard
-            icon="👩"
+            icon="👩‍💼"
             title={t.womenTitle}
             description={t.womenDesc}
+            onClick={() => navigate("/women")}
           />
           <FeatureCard
             icon="📰"
             title={t.newsTitle}
             description={t.newsDesc}
           />
-
-         <FeatureCard
-            icon="🏦"
-            title={"Compare your banks"}
-            description={"get detail comparison of banks"}
-            onClick={()=>navigate("/product-comparison")}
-
-          />      
         </div>
 
-        <section className="bg-gray-100 p-4 rounded-lg overflow-hidden">
-          <h3 className="text-xl font-semibold mb-2">{t.latestNews}</h3>
-          <div className="whitespace-nowrap overflow-hidden">
-            <span className="inline-block animate-[marquee_10s_linear_infinite]">
-              {news[newsIndex]}
-            </span>
-          </div>
+        <section>
+          <h3 className="text-2xl font-bold mb-4">{t.latestNews}</h3>
+          <p className="text-lg text-gray-700">{news[newsIndex]}</p>
         </section>
       </main>
-
-      <footer className="bg-blue-600 text-white mt-12 py-6">
-        <div className="container mx-auto text-center">
-          <p>&copy; 2024 {t.title}. {t.footer}</p>
-        </div>
-      </footer>
-
-      <button
-        onClick={() => navigate("/chat")}
-        className="fixed bottom-4 right-4 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors"
-        aria-label="Open chat"
-      >
-        <MessageCircle size={24} />
-      </button>
     </div>
   );
 }
 
+// FeatureCard Component with Click Hover Effect
 function FeatureCard({ icon, title, description, onClick }) {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md cursor-pointer" onClick={onClick}>
+    <div
+      className="bg-white p-6 rounded-lg shadow-md cursor-pointer transition-transform duration-300 transform hover:scale-105 hover:shadow-lg"
+      onClick={onClick}
+    >
       <div className="flex items-center gap-2 mb-4">
         <span className="text-3xl">{icon}</span>
         <h3 className="text-xl font-semibold">{title}</h3>
