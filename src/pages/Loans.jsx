@@ -108,6 +108,14 @@ export default function Loans() {
           ))}
         </div>
       </div>
+      <img 
+  src="loan.png"
+  alt="Loans illustration"
+  style={{ width: '90%', height: '10%' }} // Resize image to 50% width, maintaining aspect ratio
+  className="mx-auto mt-12"
+/>
+
     </div>
+
   )
 }
